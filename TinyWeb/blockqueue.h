@@ -97,7 +97,7 @@ void BlockQueue<T>::push_front(const T& item){
 template<typename T>
 bool BlockQueue<T>::pop(T &item){
 	unique_lock<mutex> locker(mtx_);
-	while(deq_empty()){
+	while(deq_.empty()){
 		condConsumer_.wait(locker);
 	}
 	item = deq_.front();
