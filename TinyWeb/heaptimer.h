@@ -39,7 +39,7 @@ class HeapTimer{
         void clear();
         void tick();
         void pop();
-        void GetNextTick();
+        int GetNextTick();
     private:
         void del_(size_t i);
         void siftup_(size_t i);
